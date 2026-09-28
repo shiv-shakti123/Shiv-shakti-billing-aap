@@ -1,61 +1,65 @@
 <!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shiv Shakti Billing App</title>
+<html><head><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shiv Shakti Billing</title>
 <style>
-body{font-family:Arial;margin:0;background:#f5f5f5}
-.header{background:#ff6a00;color:white;padding:15px;text-align:center;font-size:22px;font-weight:bold}
-.container{padding:15px;max-width:600px;margin:auto}
-.card{background:white;padding:15px;border-radius:10px;margin-bottom:15px;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
-input,button{width:100%;padding:10px;margin:5px 0;border-radius:5px;border:1px solid #ccc;box-sizing:border-box}
-button{background:#ff6a00;color:white;border:none;font-weight:bold;cursor:pointer}
-.bill{background:white;padding:15px;border:1px dashed #333}
-.chat-btn{position:fixed;bottom:20px;right:20px;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;cursor:pointer;color:white}
-.chat-box{position:fixed;bottom:90px;right:10px;width:90%;max-width:350px;height:400px;background:white;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.3);display:none;flex-direction:column}
-.chat-header{background:#25D366;color:white;padding:10px;border-radius:10px 10px 0 0;font-weight:bold}
-.chat-msg{flex:1;overflow-y:auto;padding:10px}
-.msg{margin:5px 0;padding:8px 10px;border-radius:8px;max-width:80%}
-.user{background:#dcf8c6;margin-left:auto}
-.bot{background:#eee}
-.chat-input{display:flex;padding:5px;border-top:1px solid #ddd}
-table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;padding:8px;text-align:left}th{background:#ff6a00;color:white}
-</style>
-</head>
-<body>
-<div class="header">🔱 Shiv Shakti Billing App</div>
-<div class="container">
-<div class="card">
+body{font-family:Arial;background:#f2f2f2;margin:0}
+.h{background:#ff6f00;color:#fff;padding:15px;text-align:center;font-weight:bold;font-size:20px}
+.box{background:#fff;margin:10px;padding:15px;border-radius:10px}
+input{width:100%;padding:12px;margin:6px 0;border:1px solid #ccc;border-radius:8px;box-sizing:border-box}
+button{background:#ff6f00;color:#fff;border:0;padding:12px;width:100%;border-radius:8px;font-weight:bold;margin-top:8px}
+table{width:100%;margin-top:10px;border-collapse:collapse}
+td,th{border:1px solid #ddd;padding:6px;text-align:center}
+@media print{body *{visibility:hidden}.print-area, .print-area *{visibility:visible}.print-area{position:absolute;left:0;top:0;width:100%}}
+</style></head><body>
+<div class="h">🔱 Shiv Shakti Billing App</div>
+
+<div class="box">
 <h3>Client Details</h3>
-<input id="cName" placeholder="Client ka Naam">
-<input id="cPhone" placeholder="Mobile Number">
+<input id="cname" placeholder="Client ka Naam">
+<input id="cmob" placeholder="Mobile Number">
 </div>
-<div class="card">
+
+<div class="box">
 <h3>Item Add Karo</h3>
-<input id="iName" placeholder="Item Name">
-<input id="iQty" type="number" placeholder="Quantity">
-<input id="iPrice" type="number" placeholder="Price per piece">
+<input id="iname" placeholder="Item Name">
+<input id="qty" type="number" placeholder="Quantity">
+<input id="price" type="number" placeholder="Price per piece">
 <button onclick="addItem()">+ Item Jodo</button>
-<table id="itemTable"><tr><th>Item</th><th>Qty</th><th>Price</th><th>Total</th></tr></table>
-<h3>Total: Rs <span id="total">0</span></h3>
+<table id="tbl"><tr style="background:#ff6f00;color:#fff"><th>Item</th><th>Qty</th><th>Price</th><th>Total</th></tr></table>
+<h3 id="total">Total: Rs 0</h3>
 </div>
-<button onclick="generateBill()">Bill Banao / Print Karo</button>
-<div class="card bill" id="billArea" style="display:none"></div>
+
+<div class="box print-area" id="billArea" style="display:none">
+<h2 style="text-align:center">Shiv Shakti</h2>
+<p id="bclient"></p>
+<div id="bitems"></div>
+<h3 id="btotal"></h3>
+<p style="text-align:center">Thank You!</p>
 </div>
-<div class="chat-btn" onclick="toggleChat()">💬</div>
-<div class="chat-box" id="chatBox">
-<div class="chat-header">Auto-Reply <span style="float:right;cursor:pointer" onclick="toggleChat()">X</span></div>
-<div class="chat-msg" id="chatMsg"><div class="msg bot">Namaste! Shiv Shakti me swagat hai. Puchiye - Bill, Payment, Price, Delivery?</div></div>
-<div class="chat-input"><input id="chatInput" placeholder="Sawal likho..."><button onclick="sendMsg()">Send</button></div>
+
+<div style="margin:10px">
+<button onclick="makeBill()">Bill Banao / Print Karo</button>
+<button onclick="location.reload()" style="background:#333">Naya Bill</button>
 </div>
+
 <script>
-let items=[],total=0;
-function addItem(){let n=iName.value,q=parseFloat(iQty.value),p=parseFloat(iPrice.value);if(!n||!q||!p){alert('Sab bharo');return}let t=q*p;items.push({n,q,p,t});total+=t;itemTable.innerHTML+='<tr><td>'+n+'</td><td>'+q+'</td><td>'+p+'</td><td>'+t+'</td></tr>';totalEl=document.getElementById('total');totalEl.innerText=total;iName.value='';iQty.value='';iPrice.value='';}
-function generateBill(){if(!items.length){alert('Item jodo');return}let html='<h2 style=text-align:center>Shiv Shakti</h2><p><b>Client:</b> '+cName.value+'<br><b>Mobile:</b> '+cPhone.value+'<br><b>Date:</b> '+new Date().toLocaleDateString()+'</p><table><tr><th>Item</th><th>Qty</th><th>Rate</th><th>Total</th></tr>';items.forEach(it=>{html+='<tr><td>'+it.n+'</td><td>'+it.q+'</td><td>'+it.p+'</td><td>'+it.t+'</td></tr>'});html+='</table><h3>Total: Rs '+total+'</h3><p style=text-align:center>Thank You!</p>';billArea.innerHTML=html;billArea.style.display='block';window.print();}
-function toggleChat(){let b=chatBox;b.style.display=b.style.display=='flex'?'none':'flex';}
-function sendMsg(){let txt=chatInput.value.trim();if(!txt)return;let low=txt.toLowerCase();chatMsg.innerHTML+='<div class=msg user>'+txt+'</div>';let rep=autoReply(low);setTimeout(()=>{chatMsg.innerHTML+='<div class=msg bot>'+rep+'</div>';chatMsg.scrollTop=chatMsg.scrollHeight},500);chatInput.value='';}
-function autoReply(t){if(t.includes('bill'))return'Bill banane ke liye upar Client name aur Item jodo, fir Bill Banao dabao.';if(t.includes('pay'))return'Payment UPI / Cash se: shivshakti@upi';if(t.includes('price')||t.includes('rate'))return'Rate: Cement 400/bag, Steel 55/kg, Reta 1800/trolley';if(t.includes('time')||t.includes('khula'))return'Dukan 8am-8pm khuli hai, Sunday bhi khula.';if(t.includes('delivery'))return'Delivery 2 ghante me. Address bhejo.';return'Apna naam, kaam, location bhejo. Puch sakte ho: bill, payment, price, delivery, timing';}
-</script>
-</body>
-</html>
+let items=[], total=0;
+function addItem(){
+ let n=iname.value, q=Number(qty.value), p=Number(price.value);
+ if(!n||!q||!p){alert("Sab bharo");return}
+ let t=q*p; items.push({n,q,p,t}); total+=t;
+ tbl.innerHTML+=`<tr><td>${n}</td><td>${q}</td><td>${p}</td><td>${t}</td></tr>`;
+ document.getElementById("total").innerText="Total: Rs "+total;
+ iname.value="";qty.value="";price.value="";
+}
+function makeBill(){
+ if(items.length==0){alert("Pehle item jodo");return}
+ bclient.innerText="Client: "+cname.value+" | Mob: "+cmob.value;
+ let h='<table><tr><th>Item</th><th>Qty</th><th>Total</th></tr>';
+ items.forEach(i=>{h+=`<tr><td>${i.n}</td><td>${i.q}</td><td>${i.t}</td></tr>`});
+ h+='</table>'; bitems.innerHTML=h;
+ btotal.innerText="Total: Rs "+total;
+ billArea.style.display="block";
+ setTimeout(()=>{window.print(); billArea.style.display="none"},500);
+}
+</script></body></html>
