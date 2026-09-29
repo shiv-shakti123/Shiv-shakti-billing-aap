@@ -2,63 +2,75 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shiv Shakti Billing</title>
+<title>Shiv Shakti - Bhakti</title>
 <style>
-body{margin:0;font-family:system-ui;background:#f6f1eb}
-.h{background:linear-gradient(135deg,#ff6f00,#ff9d00);color:#fff;padding:22px;text-align:center;border-radius:0 0 22px 22px}
-.box{background:#fff;margin:15px;padding:18px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,.08)}
-input{width:100%;padding:12px;margin:6px 0 12px;border:1.5px solid #e7d9c7;border-radius:12px;box-sizing:border-box}
-.row{display:flex;align-items:center;gap:10px;margin:8px 0}
-.qty{width:50px;text-align:center;font-weight:700}
-.btn{width:38px;height:38px;border-radius:50%;border:none;background:#ffe4c4;font-size:20px}
-.btn2{background:#ff6f00;color:#fff}
-.mainbtn{width:100%;background:linear-gradient(135deg,#ff6f00,#ff9d00);color:#fff;border:none;padding:15px;border-radius:14px;font-weight:700;font-size:17px;margin-top:10px}
-.total{font-size:28px;color:#ff6f00;font-weight:800}
-@media print{body *{visibility:hidden}#print,#print *{visibility:visible}#print{position:absolute;left:0;top:0;width:100%;margin:0}}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui;background:#fffaf0 url('https://www.transparenttextures.com/patterns/cream-paper.png');padding-bottom:90px}
+.head{background:linear-gradient(135deg,#7a1f1f,#b43a12);color:#ffe7a0;padding:18px 12px;text-align:center;position:relative;overflow:hidden;border-radius:0 0 22px 22px}
+.head:before{content:"ॐ ॐ ॐ ॐ ॐ ॐ";position:absolute;top:5px;left:0;right:0;opacity:.08;font-size:22px;letter-spacing:10px}
+.head h1{margin:0;font-size:22px;color:#ffd86a;letter-spacing:.5px}
+.head p{margin:4px 0 0;font-size:12px;opacity:.9}
+.live{background:#fffdf5;margin:12px;border:1.5px solid #f0d9a0;border-radius:16px;padding:14px;display:flex;align-items:center;gap:12px;box-shadow:0 6px 20px rgba(122,31,31,.1)}
+.live .diya{font-size:42px}
+.gold-title{text-align:center;color:#7a1f1f;font-weight:800;margin:18px 0 10px;font-size:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:0 12px}
+.card{background:linear-gradient(180deg,#fffef8,#fff6dc);border:1.5px solid #e8c76a;border-radius:16px;padding:14px 6px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.card span{font-size:36px;display:block}
+.card b{color:#7a1f1f;display:block;margin-top:6px;font-size:14px}
+.card small{color:#8a6d3b;font-size:11px}
+.vichar{margin:15px 12px;background:#fff8e1;border:1px solid #e8c76a;border-radius:14px;padding:12px;text-align:center}
+.bottom{position:fixed;left:10px;right:10px;bottom:10px;background:#fffdf5;border:1px solid #f0d9a0;border-radius:20px;display:flex;justify-content:space-around;padding:8px 0;box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.bottom div{text-align:center;font-size:11px;color:#9c7a4a;width:25%}
+.bottom .act{color:#7a1f1f;font-weight:800;background:#ffe8a8;border-radius:15px;margin:0 5px;padding:2px}
 </style>
 </head>
 <body>
-<div class="h"><h2 style="margin:0">🕉️ Shiv Shakti</h2><div>Building Materials & Traders</div></div>
 
-<div class="box">
-<h3 style="margin:0 0 10px">New Bill</h3>
-<input id="cname" placeholder="Client ka Naam">
-<input id="cmob" placeholder="Mobile Number - 10 digit">
+<div class="head">
+<div style="font-size:28px">🕉️ 🔱</div>
+<h1>Shiv Shakti Building Materials</h1>
+<p>जय शिव शक्ति • भक्ति और विश्वास के साथ</p>
 </div>
 
-<div class="box">
-<b>Items</b>
-<div class="row"><div style="flex:1">Cement - 200 Rs</div><button class="btn" onclick="chg1(-1)">-</button><input id="q1" class="qty" value="0"><button class="btn btn2" onclick="chg1(1)">+</button></div>
-<div class="row"><div style="flex:1">Ret - 1000 Rs</div><button class="btn" onclick="chg2(-1)">-</button><input id="q2" class="qty" value="0"><button class="btn btn2" onclick="chg2(1)">+</button></div>
-<hr>
-<div style="display:flex;justify-content:space-between"><b>Total Amount</b><span id="t" class="total">₹0</span></div>
-<button class="mainbtn" onclick="window.print()">🖨️ Bill Banao / Print Karo</button>
+<div class="live">
+<div class="diya">🪔</div>
+<div>
+<div style="font-size:12px;color:#7a1f1f;font-weight:700">Live Clock</div>
+<div id="tm" style="font-size:20px;font-weight:900;color:#4a1414">00:00:00</div>
+<div id="dy" style="font-size:12px;color:#7a5a2e">Monday • -- --- ----</div>
+</div>
+<div style="margin-left:auto;text-align:right"><div style="font-size:11px">शुभ मुहूर्त</div><b style="font-size:12px;color:#7a1f1f">लाभ • 7:30 AM</b></div>
 </div>
 
-<div class="box" id="print">
-<h2 style="text-align:center;margin:0">Shiv Shakti</h2>
-<p style="text-align:center">Date: <span id="d"></span></p><hr>
-<p>Client: <b id="bc"></b></p><p>Mobile: <b id="bm"></b></p><hr>
-<p>Cement: <span id="bq1"></span> x 200 = <span id="bt1"></span></p>
-<p>Ret: <span id="bq2"></span> x 1000 = <span id="bt2"></span></p><hr>
-<h3>Total: ₹<span id="bt"></span></h3>
+<div class="gold-title">— 🔱 त्वरित सेवाएं 🔱 —</div>
+
+<div class="grid">
+<div class="card" onclick="alert('Sales khulega')"><span>🥁</span><b>Sales</b><small>बिक्री रिकॉर्ड</small></div>
+<div class="card" onclick="alert('Expiry khulega')"><span>📿</span><b>Expiry Date</b><small>सामान समाप्ति</small></div>
+<div class="card" onclick="alert('Stock khulega')"><span>🕉️</span><b>Stock</b><small>सामान स्टॉक</small></div>
+</div>
+
+<div class="vichar">
+<div style="color:#7a1f1f;font-weight:800">🪷 आज का विचार</div>
+<div style="font-size:13px;margin-top:6px;color:#5a3a1a;line-height:1.4">"जहां विश्वास है, वहां शक्ति है। शुभ कार्य आज ही शुरू करें।"</div>
+<div style="font-size:11px;margin-top:4px;color:#9c7a4a">- हर हर महादेव</div>
+</div>
+
+<div class="bottom">
+<div class="act">🛕<br>Home</div>
+<div>🧾<br>Bills</div>
+<div>👥<br>Customers</div>
+<div>⚙️<br>Setting</div>
 </div>
 
 <script>
-let q1=0,q2=0;
-function chg1(v){q1=Math.max(0,q1+v);document.getElementById('q1').value=q1;upd()}
-function chg2(v){q2=Math.max(0,q2+v);document.getElementById('q2').value=q2;upd()}
 function upd(){
-let t1=q1*200,t2=q2*1000,tt=t1+t2;
-document.getElementById('t').innerText='₹'+tt;
-document.getElementById('d').innerText=new Date().toLocaleDateString('en-IN');
-document.getElementById('bc').innerText=document.getElementById('cname').value;
-document.getElementById('bm').innerText=document.getElementById('cmob').value;
-document.getElementById('bq1').innerText=q1;document.getElementById('bt1').innerText=t1;
-document.getElementById('bq2').innerText=q2;document.getElementById('bt2').innerText=t2;
-document.getElementById('bt').innerText=tt;
+let n=new Date();
+document.getElementById('tm').innerText=n.toLocaleTimeString('en-IN',{hour12:true});
+let d=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+document.getElementById('dy').innerText=d[n.getDay()]+' • '+n.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});
 }
-document.getElementById('cname').oninput=upd;document.getElementById('cmob').oninput=upd;
+setInterval(upd,1000); upd();
 </script>
 </body>
 </html>
