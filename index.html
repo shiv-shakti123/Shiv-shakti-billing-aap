@@ -1,77 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shiv Shakti</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@600;800&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+<title>Shiv Shakti Kirana Pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0}
-body{font-family:'Poppins',system-ui;background:#fef8ec;padding-bottom:100px}
-.top{background:linear-gradient(90deg,#8B2500,#4A0E0E);color:#FFD86B;padding:0;overflow:hidden;border-radius:0 0 28px 28px;position:relative}
-.top .mandir{height:60px;background:linear-gradient(to bottom,transparent,rgba(0,0,0,.2)),url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 60%22><path d=%22M0 60 L0 40 Q20 20 40 40 Q60 10 80 35 Q100 15 120 38 Q140 10 160 35 Q180 5 200 35 L200 15 L210 5 L220 15 L220 35 Q240 5 260 35 Q280 10 300 38 Q320 15 340 35 Q360 10 380 40 L400 40 L400 60 Z%22 fill=%22%23FFD86B%22 opacity=%220.25%22/></svg>');opacity:.9}
-.top-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 16px 14px}
-.om{font-size:48px;color:#FFD86B;text-shadow:0 2px 10px rgba(0,0,0,.5);font-weight:900}
-.trishul{font-size:42px;color:#FFD86B;filter:drop-shadow(0 2px 5px rgba(0,0,0,.5))}
-.top h1{font-size:19px;color:#FFD86B;font-weight:800;letter-spacing:.3px}
-.top p{font-size:11px;color:#ffebbc;opacity:.9;font-family:'Noto Serif Devanagari'}
-.welcome{text-align:center;padding:18px 0 10px;position:relative}
-.welcome:before,.welcome:after{content:"ॐ";position:absolute;top:10px;font-size:42px;color:#e8d5b0;opacity:.5}
-.welcome:before{left:20px}.welcome:after{right:20px}
-.welcome h2{font-family:'Noto Serif Devanagari';color:#5a1a1a;font-size:22px}
-.welcome span{font-size:13px;color:#7a4a2a}
-.clock{background:#fffcf0;border:1.5px solid #EAC66A;border-radius:18px;margin:12px;padding:14px;display:flex;align-items:center;gap:12px;box-shadow:0 8px 24px rgba(90,26,26,.08)}
-.clock .diya-box{width:84px;height:84px;background:#fdf3d7;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:48px}
-.section-title{text-align:center;color:#5a1a1a;font-family:'Noto Serif Devanagari';font-weight:800;margin:22px 0 14px;position:relative;font-size:18px}
-.section-title:before{content:"";position:absolute;left:22%;top:50%;width:18%;height:1px;background:#8B2500}
-.section-title:after{content:"";position:absolute;right:22%;top:50%;width:18%;height:1px;background:#8B2500}
-.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:0 12px}
-.gcard{background:linear-gradient(180deg,#ffffff,#fff8d6);border:1.8px solid #E6C15A;border-radius:16px;padding:14px 6px;text-align:center;box-shadow:0 0 0 1px #fff inset, 0 6px 16px rgba(0,0,0,.06);position:relative}
-.gcard:before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:3px;background:linear-gradient(90deg,transparent,#FFD86B,transparent)}
-.gcard .ico{width:56px;height:56px;margin:0 auto;background:radial-gradient(#fff7cc,#ffdc7a);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 3px 8px rgba(0,0,0,.15)}
-.gcard b{color:#5a1a1a;font-size:13px;display:block;margin-top:8px}
-.gcard small{color:#8a6d3b;font-size:10px;font-family:'Noto Serif Devanagari'}
-.vichar{margin:18px 12px;background:#fff8e1;border:1px solid #EAC66A;border-radius:14px;padding:14px;text-align:center}
-.bottom{position:fixed;left:12px;right:12px;bottom:12px;background:#fffaf0;border:1px solid #EAC66A;border-radius:24px;display:flex;padding:6px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
-.bottom div{flex:1;text-align:center;padding:8px 0;border-radius:16px;font-size:11px;color:#9a7a4a}
-.bottom .active{background:#ffe8a8;color:#5a1a1a;font-weight:800}
+*{box-sizing:border-box;margin:0;font-family:'Poppins',sans-serif}
+body{background:#f2f4f7;padding-bottom:90px}
+.top{background:#1a1625;color:#fff;padding:18px 16px 36px;border-radius:0 0 28px 28px;display:flex;justify-content:space-between;align-items:center}
+.top h1{font-size:18px;line-height:1.2}
+.search{margin:-22px 14px 16px;background:#fff;border-radius:24px;padding:12px 14px;display:flex;align-items:center;gap:8px;box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.search input{border:0;outline:0;flex:1;font-size:13px}
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:0 12px}
+.scard{border-radius:18px;padding:12px;box-shadow:0 6px 14px rgba(0,0,0,.08)}
+.scard b{font-size:18px;display:block;margin-top:4px}
+.scard small{font-size:10px;color:green;font-weight:700}
+.title{padding:20px 14px 10px;display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:17px}
+.title span{color:#2563eb;font-size:13px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 12px}
+.gcard{border-radius:22px;padding:18px;text-align:center;color:#1e1b4b;box-shadow:0 10px 20px rgba(0,0,0,.12);position:relative;height:118px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.gcard .ico{font-size:42px;filter:drop-shadow(0 4px 6px rgba(0,0,0,.2))}
+.gcard b{margin-top:8px;font-size:15px;color:#0f172a}
+.c1{background:linear-gradient(135deg,#a78bfa,#6366f1)}
+.c2{background:linear-gradient(135deg,#fb923c,#ef4444)}
+.c3{background:linear-gradient(135deg,#5eead4,#06b6d4)}
+.c4{background:linear-gradient(135deg,#f9a8d4,#ec4899)}
+.c5{background:linear-gradient(135deg,#4ade80,#22c55e)}
+.c6{background:linear-gradient(135deg,#93c5fd,#6366f1)}
+.bottom{position:fixed;left:10px;right:10px;bottom:10px;background:#fff;border-radius:24px;display:flex;justify-content:space-around;padding:10px 0;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+.bottom div{text-align:center;font-size:11px;color:#6b7280}
+.bottom .active{color:#1e40af;font-weight:800}
 </style>
 </head>
 <body>
-<div class="top"><div class="mandir"></div>
-<div class="top-inner"><div class="om">ॐ</div>
-<div style="text-align:center;flex:1"><h1>Shiv Shakti Building Materials</h1><p>जय शिव शक्ति • भक्ति और विश्वास के साथ</p></div>
-<div class="trishul">🔱</div></div></div>
-
-<div class="welcome"><h2>नमस्कार, राम शर्मा</h2><span>भवन निर्माण सामग्री | गुणवत्ता और भक्ति</span></div>
-
-<div class="clock">
-<div class="diya-box">🪔</div>
-<div><div style="font-size:12px;color:#5a1a1a;font-weight:700">Live Clock</div>
-<div id="t" style="font-size:22px;font-weight:900;color:#3b1212">07:32 PM</div>
-<div id="d" style="font-size:11px;color:#7a4a2a">Mon, 28 Oct 2024 • प्रदोष काल</div>
-<div style="margin-top:4px;background:#fbe8a6;border-radius:20px;padding:2px 8px;font-size:10px;display:inline-block">सुबह की आरती • 7:30 AM</div>
-</div></div>
-
-<div class="section-title">त्वरित सेवाएं</div>
-<div class="grid">
-<div class="gcard"><div class="ico">🥁</div><b>Sales</b><small>बिक्री रिकॉर्ड</small></div>
-<div class="gcard"><div class="ico">📿</div><b>Expiry Date</b><small>सामान समाप्ति तिथि</small></div>
-<div class="gcard"><div class="ico">🛕</div><b>Stock</b><small>सामान स्टॉक</small></div>
+<div class="top">
+<div style="display:flex;gap:10px;align-items:center"><div style="background:rgba(255,255,255,.1);padding:8px;border-radius:10px">🏪</div><h1>Shiv Shakti<br>Kirana</h1></div>
+<div style="display:flex;gap:14px;font-size:20px">🔔 🎧 👤</div>
 </div>
 
-<div class="vichar">
-<div style="font-weight:800;color:#5a1a1a">🪷 आज का विचार</div>
-<div style="font-size:12px;margin-top:6px;color:#5a3a1a">“जहां विश्वास है, वहां शक्ति है। शुभ कार्य आज ही शुरू करें।”</div>
-<div style="font-size:11px;color:#9a7a4a;margin-top:4px">- हर हर महादेव</div>
+<div class="search">🔍 <input placeholder="Search for products, SKUs, or categories..."><span>🎤</span><span>⚙️</span></div>
+
+<div style="text-align:center;font-size:11px;letter-spacing:3px;color:#6b7280;margin:10px 0">STATS OVERVIEW</div>
+<div class="stats">
+<div class="scard" style="background:linear-gradient(#e0f2fe,#bae6fd)">📈<br><small style="color:#000">Total Orders</small><b>128</b><small>+12 today ↑ 8.5%</small></div>
+<div class="scard" style="background:linear-gradient(#dcfce7,#bbf7d0)">💵<br><small style="color:#000">Today's Revenue</small><b>₹12,450</b><small>+₹2,100 ↑ 18%</small></div>
+<div class="scard" style="background:linear-gradient(#ffedd5,#fed7aa)">👥<br><small style="color:#000">Active Customers</small><b>54</b><small>+5 new ↑ 10%</small></div>
+</div>
+
+<div class="title"><div>Categories</div><span>View all →</span></div>
+
+<div class="grid">
+<div class="gcard c1"><div class="ico">📊</div><b>Sales</b></div>
+<div class="gcard c2"><div class="ico">⏳</div><b>Expiry</b></div>
+<div class="gcard c3"><div class="ico">📦</div><b>Stock</b></div>
+<div class="gcard c4"><div class="ico">📝</div><b>Udhaari</b></div>
+<div class="gcard c5"><div class="ico">📈</div><b>Profit</b></div>
+<div class="gcard c6"><div class="ico">🧾</div><b>Bills</b></div>
 </div>
 
 <div class="bottom">
-<div class="active">🛕<br>Home</div><div>🧾<br>Bills</div><div>👥<br>Customers</div><div>⚙️<br>Setting</div>
+<div class="active">🏠<br>Home</div><div>📋<br>Orders</div><div>📦<br>Inventory</div><div>👥<br>Customers</div><div>👤<br>Profile</div>
 </div>
 
 <script>
-function tick(){let n=new Date();document.getElementById('t').innerText=n.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',hour12:true});document.getElementById('d').innerText=n.toLocaleDateString('en-IN',{weekday:'short',day:'2-digit',month:'short',year:'numeric'})+' • '+ (n.getHours()<12?'प्रातः काल':'प्रदोष काल');}
-setInterval(tick,1000);tick();
+// Live clock example - aap isko sales se jod sakte ho
+console.log("Shiv Shakti Kirana Pro Loaded - Har Har Mahadev");
 </script>
 </body>
 </html>
