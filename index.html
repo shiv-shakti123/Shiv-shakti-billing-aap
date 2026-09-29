@@ -2,75 +2,76 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shiv Shakti - Bhakti</title>
+<title>Shiv Shakti</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@600;800&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:system-ui;background:#fffaf0 url('https://www.transparenttextures.com/patterns/cream-paper.png');padding-bottom:90px}
-.head{background:linear-gradient(135deg,#7a1f1f,#b43a12);color:#ffe7a0;padding:18px 12px;text-align:center;position:relative;overflow:hidden;border-radius:0 0 22px 22px}
-.head:before{content:"ॐ ॐ ॐ ॐ ॐ ॐ";position:absolute;top:5px;left:0;right:0;opacity:.08;font-size:22px;letter-spacing:10px}
-.head h1{margin:0;font-size:22px;color:#ffd86a;letter-spacing:.5px}
-.head p{margin:4px 0 0;font-size:12px;opacity:.9}
-.live{background:#fffdf5;margin:12px;border:1.5px solid #f0d9a0;border-radius:16px;padding:14px;display:flex;align-items:center;gap:12px;box-shadow:0 6px 20px rgba(122,31,31,.1)}
-.live .diya{font-size:42px}
-.gold-title{text-align:center;color:#7a1f1f;font-weight:800;margin:18px 0 10px;font-size:18px}
+*{box-sizing:border-box;margin:0}
+body{font-family:'Poppins',system-ui;background:#fef8ec;padding-bottom:100px}
+.top{background:linear-gradient(90deg,#8B2500,#4A0E0E);color:#FFD86B;padding:0;overflow:hidden;border-radius:0 0 28px 28px;position:relative}
+.top .mandir{height:60px;background:linear-gradient(to bottom,transparent,rgba(0,0,0,.2)),url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 60%22><path d=%22M0 60 L0 40 Q20 20 40 40 Q60 10 80 35 Q100 15 120 38 Q140 10 160 35 Q180 5 200 35 L200 15 L210 5 L220 15 L220 35 Q240 5 260 35 Q280 10 300 38 Q320 15 340 35 Q360 10 380 40 L400 40 L400 60 Z%22 fill=%22%23FFD86B%22 opacity=%220.25%22/></svg>');opacity:.9}
+.top-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 16px 14px}
+.om{font-size:48px;color:#FFD86B;text-shadow:0 2px 10px rgba(0,0,0,.5);font-weight:900}
+.trishul{font-size:42px;color:#FFD86B;filter:drop-shadow(0 2px 5px rgba(0,0,0,.5))}
+.top h1{font-size:19px;color:#FFD86B;font-weight:800;letter-spacing:.3px}
+.top p{font-size:11px;color:#ffebbc;opacity:.9;font-family:'Noto Serif Devanagari'}
+.welcome{text-align:center;padding:18px 0 10px;position:relative}
+.welcome:before,.welcome:after{content:"ॐ";position:absolute;top:10px;font-size:42px;color:#e8d5b0;opacity:.5}
+.welcome:before{left:20px}.welcome:after{right:20px}
+.welcome h2{font-family:'Noto Serif Devanagari';color:#5a1a1a;font-size:22px}
+.welcome span{font-size:13px;color:#7a4a2a}
+.clock{background:#fffcf0;border:1.5px solid #EAC66A;border-radius:18px;margin:12px;padding:14px;display:flex;align-items:center;gap:12px;box-shadow:0 8px 24px rgba(90,26,26,.08)}
+.clock .diya-box{width:84px;height:84px;background:#fdf3d7;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:48px}
+.section-title{text-align:center;color:#5a1a1a;font-family:'Noto Serif Devanagari';font-weight:800;margin:22px 0 14px;position:relative;font-size:18px}
+.section-title:before{content:"";position:absolute;left:22%;top:50%;width:18%;height:1px;background:#8B2500}
+.section-title:after{content:"";position:absolute;right:22%;top:50%;width:18%;height:1px;background:#8B2500}
 .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:0 12px}
-.card{background:linear-gradient(180deg,#fffef8,#fff6dc);border:1.5px solid #e8c76a;border-radius:16px;padding:14px 6px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.08)}
-.card span{font-size:36px;display:block}
-.card b{color:#7a1f1f;display:block;margin-top:6px;font-size:14px}
-.card small{color:#8a6d3b;font-size:11px}
-.vichar{margin:15px 12px;background:#fff8e1;border:1px solid #e8c76a;border-radius:14px;padding:12px;text-align:center}
-.bottom{position:fixed;left:10px;right:10px;bottom:10px;background:#fffdf5;border:1px solid #f0d9a0;border-radius:20px;display:flex;justify-content:space-around;padding:8px 0;box-shadow:0 8px 20px rgba(0,0,0,.12)}
-.bottom div{text-align:center;font-size:11px;color:#9c7a4a;width:25%}
-.bottom .act{color:#7a1f1f;font-weight:800;background:#ffe8a8;border-radius:15px;margin:0 5px;padding:2px}
+.gcard{background:linear-gradient(180deg,#ffffff,#fff8d6);border:1.8px solid #E6C15A;border-radius:16px;padding:14px 6px;text-align:center;box-shadow:0 0 0 1px #fff inset, 0 6px 16px rgba(0,0,0,.06);position:relative}
+.gcard:before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:3px;background:linear-gradient(90deg,transparent,#FFD86B,transparent)}
+.gcard .ico{width:56px;height:56px;margin:0 auto;background:radial-gradient(#fff7cc,#ffdc7a);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 3px 8px rgba(0,0,0,.15)}
+.gcard b{color:#5a1a1a;font-size:13px;display:block;margin-top:8px}
+.gcard small{color:#8a6d3b;font-size:10px;font-family:'Noto Serif Devanagari'}
+.vichar{margin:18px 12px;background:#fff8e1;border:1px solid #EAC66A;border-radius:14px;padding:14px;text-align:center}
+.bottom{position:fixed;left:12px;right:12px;bottom:12px;background:#fffaf0;border:1px solid #EAC66A;border-radius:24px;display:flex;padding:6px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+.bottom div{flex:1;text-align:center;padding:8px 0;border-radius:16px;font-size:11px;color:#9a7a4a}
+.bottom .active{background:#ffe8a8;color:#5a1a1a;font-weight:800}
 </style>
 </head>
 <body>
+<div class="top"><div class="mandir"></div>
+<div class="top-inner"><div class="om">ॐ</div>
+<div style="text-align:center;flex:1"><h1>Shiv Shakti Building Materials</h1><p>जय शिव शक्ति • भक्ति और विश्वास के साथ</p></div>
+<div class="trishul">🔱</div></div></div>
 
-<div class="head">
-<div style="font-size:28px">🕉️ 🔱</div>
-<h1>Shiv Shakti Building Materials</h1>
-<p>जय शिव शक्ति • भक्ति और विश्वास के साथ</p>
-</div>
+<div class="welcome"><h2>नमस्कार, राम शर्मा</h2><span>भवन निर्माण सामग्री | गुणवत्ता और भक्ति</span></div>
 
-<div class="live">
-<div class="diya">🪔</div>
-<div>
-<div style="font-size:12px;color:#7a1f1f;font-weight:700">Live Clock</div>
-<div id="tm" style="font-size:20px;font-weight:900;color:#4a1414">00:00:00</div>
-<div id="dy" style="font-size:12px;color:#7a5a2e">Monday • -- --- ----</div>
-</div>
-<div style="margin-left:auto;text-align:right"><div style="font-size:11px">शुभ मुहूर्त</div><b style="font-size:12px;color:#7a1f1f">लाभ • 7:30 AM</b></div>
-</div>
+<div class="clock">
+<div class="diya-box">🪔</div>
+<div><div style="font-size:12px;color:#5a1a1a;font-weight:700">Live Clock</div>
+<div id="t" style="font-size:22px;font-weight:900;color:#3b1212">07:32 PM</div>
+<div id="d" style="font-size:11px;color:#7a4a2a">Mon, 28 Oct 2024 • प्रदोष काल</div>
+<div style="margin-top:4px;background:#fbe8a6;border-radius:20px;padding:2px 8px;font-size:10px;display:inline-block">सुबह की आरती • 7:30 AM</div>
+</div></div>
 
-<div class="gold-title">— 🔱 त्वरित सेवाएं 🔱 —</div>
-
+<div class="section-title">त्वरित सेवाएं</div>
 <div class="grid">
-<div class="card" onclick="alert('Sales khulega')"><span>🥁</span><b>Sales</b><small>बिक्री रिकॉर्ड</small></div>
-<div class="card" onclick="alert('Expiry khulega')"><span>📿</span><b>Expiry Date</b><small>सामान समाप्ति</small></div>
-<div class="card" onclick="alert('Stock khulega')"><span>🕉️</span><b>Stock</b><small>सामान स्टॉक</small></div>
+<div class="gcard"><div class="ico">🥁</div><b>Sales</b><small>बिक्री रिकॉर्ड</small></div>
+<div class="gcard"><div class="ico">📿</div><b>Expiry Date</b><small>सामान समाप्ति तिथि</small></div>
+<div class="gcard"><div class="ico">🛕</div><b>Stock</b><small>सामान स्टॉक</small></div>
 </div>
 
 <div class="vichar">
-<div style="color:#7a1f1f;font-weight:800">🪷 आज का विचार</div>
-<div style="font-size:13px;margin-top:6px;color:#5a3a1a;line-height:1.4">"जहां विश्वास है, वहां शक्ति है। शुभ कार्य आज ही शुरू करें।"</div>
-<div style="font-size:11px;margin-top:4px;color:#9c7a4a">- हर हर महादेव</div>
+<div style="font-weight:800;color:#5a1a1a">🪷 आज का विचार</div>
+<div style="font-size:12px;margin-top:6px;color:#5a3a1a">“जहां विश्वास है, वहां शक्ति है। शुभ कार्य आज ही शुरू करें।”</div>
+<div style="font-size:11px;color:#9a7a4a;margin-top:4px">- हर हर महादेव</div>
 </div>
 
 <div class="bottom">
-<div class="act">🛕<br>Home</div>
-<div>🧾<br>Bills</div>
-<div>👥<br>Customers</div>
-<div>⚙️<br>Setting</div>
+<div class="active">🛕<br>Home</div><div>🧾<br>Bills</div><div>👥<br>Customers</div><div>⚙️<br>Setting</div>
 </div>
 
 <script>
-function upd(){
-let n=new Date();
-document.getElementById('tm').innerText=n.toLocaleTimeString('en-IN',{hour12:true});
-let d=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-document.getElementById('dy').innerText=d[n.getDay()]+' • '+n.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});
-}
-setInterval(upd,1000); upd();
+function tick(){let n=new Date();document.getElementById('t').innerText=n.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',hour12:true});document.getElementById('d').innerText=n.toLocaleDateString('en-IN',{weekday:'short',day:'2-digit',month:'short',year:'numeric'})+' • '+ (n.getHours()<12?'प्रातः काल':'प्रदोष काल');}
+setInterval(tick,1000);tick();
 </script>
 </body>
 </html>
