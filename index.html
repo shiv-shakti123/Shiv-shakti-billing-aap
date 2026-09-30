@@ -12,7 +12,7 @@ body{background:#f2f4f7;padding-bottom:100px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:12px}
 .gcard{border-radius:22px;padding:20px;text-align:center;box-shadow:0 10px 20px rgba(0,0,0,.12);cursor:pointer;height:115px;display:flex;flex-direction:column;justify-content:center;transition:.2s}
 .gcard:active{transform:scale(.95)}
-.c1{background:linear-gradient(135deg,#a78bfa,#6366f1)} .c2{background:linear-gradient(135deg,#fb923c,#ef4444)} .c3{background:linear-gradient(135deg,#5eead4,#06b6d4)} .c4{background:linear-gradient(135deg,#f9a8d4,#ec4899)} .c5{background:linear-gradient(135deg,#4ade80,#22c55e)} .c6{background:linear-gradient(135deg,#93c5fd,#6366f1)}
+.c1{background:linear-gradient(135deg,#a78bfa,#6366f1);color:#fff} .c2{background:linear-gradient(135deg,#fb923c,#ef4444);color:#fff} .c3{background:linear-gradient(135deg,#5eead4,#06b6d4);color:#fff} .c4{background:linear-gradient(135deg,#f9a8d4,#ec4899);color:#fff} .c5{background:linear-gradient(135deg,#4ade80,#22c55e);color:#fff} .c6{background:linear-gradient(135deg,#93c5fd,#6366f1);color:#fff}
 .modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);display:none;align-items:end;z-index:99}
 .modal.active{display:flex}
 .box{background:#fff;width:100%;max-height:85vh;border-radius:28px 28px 0 0;padding:18px;overflow:auto}
@@ -20,6 +20,9 @@ body{background:#f2f4f7;padding-bottom:100px}
 .btn{width:100%;padding:14px;background:#1a1625;color:#fff;border:0;border-radius:14px;margin-top:10px;font-weight:700}
 .item{padding:10px;border-bottom:1px solid #eee;display:flex;justify-content:space-between}
 .bottom{position:fixed;left:10px;right:10px;bottom:10px;background:#fff;border-radius:24px;display:flex;justify-content:space-around;padding:10px 0;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+.bottom div{cursor:pointer;text-align:center;font-size:12px;padding:4px 10px;border-radius:12px}
+.bottom div.active{color:#6366f1;font-weight:700;background:#eef2ff}
+.yt-btn{background:#ff0000;color:#fff;padding:14px;border-radius:14px;text-align:center;margin:12px;display:block;text-decoration:none;font-weight:700}
 </style></head><body>
 
 <div class="top"><h1>Shiv Shakti<br>Kirana</h1><div>🔔</div></div>
@@ -41,25 +44,33 @@ body{background:#f2f4f7;padding-bottom:100px}
 <div class="gcard c6" onclick="openM('billsM')">🧾<br><b>Bills</b></div>
 </div>
 
-<!-- MODALS -->
-<div id="salesM" class="modal"><div class="box"><h2>💰 Naya Sale Add Karo</h2><input id="sName" placeholder="Product naam - jaise Parle-G"><input id="sAmt" type="number" placeholder="Rupaye - jaise 500"><input id="sCust" placeholder="Customer naam"><button class="btn" onclick="addSale()">Sale Add Karo</button><div id="salesList"></div><button class="btn" style="background:#ddd;color:#000" onclick="closeM('salesM')">Band Karo</button></div></div>
+<a class="yt-btn" href="https://www.youtube.com/results?search_query=Shiv+Shakti+Kirana+App" target="_blank">▶️ YouTube pe kaise chalana hai dekhein</a>
 
-<div id="stockM" class="modal"><div class="box"><h2>📦 Stock Add Karo</h2><input id="stName" placeholder="Product naam"><input id="stQty" type="number" placeholder="Kitne packet/bottle"><input id="stExp" type="date"><button class="btn" onclick="addStock()">Stock Save Karo</button><div id="stockList"></div><button class="btn" style="background:#ddd;color:#000" onclick="closeM('stockM')">Band Karo</button></div></div>
+<div id="salesM" class="modal" onclick="if(event.target==this)closeM('salesM')"><div class="box"><h2>💰 Naya Sale Add Karo</h2><input id="sName" placeholder="Product naam - jaise Parle-G"><input id="sAmt" type="number" placeholder="Rupaye - jaise 500"><input id="sCust" placeholder="Customer naam"><button class="btn" onclick="addSale()">Sale Add Karo</button><div id="salesList"></div><button class="btn" style="background:#ddd;color:#000" onclick="closeM('salesM')">Band Karo</button></div></div>
 
-<div id="expiryM" class="modal"><div class="box"><h2>⏳ Expire Hone Wala Maal</h2><div id="expiryList">Koi maal expire nahi ho raha 👍</div><button class="btn" style="background:#ddd;color:#000" onclick="closeM('expiryM')">Band Karo</button></div></div>
+<div id="stockM" class="modal" onclick="if(event.target==this)closeM('stockM')"><div class="box"><h2>📦 Stock Add Karo</h2><input id="stName" placeholder="Product naam"><input id="stQty" type="number" placeholder="Kitne packet/bottle"><input id="stExp" type="date"><button class="btn" onclick="addStock()">Stock Save Karo</button><div id="stockList"></div><button class="btn" style="background:#ddd;color:#000" onclick="closeM('stockM')">Band Karo</button></div></div>
 
-<div id="udhaarM" class="modal"><div class="box"><h2>📒 Udhaari Khata</h2><input id="uName" placeholder="Customer naam"><input id="uAmt" type="number" placeholder="Kitna udhaar"><button class="btn" onclick="addUdhaar()">Udhaar Likho</button><div id="udhaarList"></div><button class="btn" style="background:#ddd;color:#000" onclick="closeM('udhaarM')">Band Karo</button></div></div>
+<div id="expiryM" class="modal" onclick="if(event.target==this)closeM('expiryM')"><div class="box"><h2>⏳ Expire Hone Wala Maal</h2><div id="expiryList">Koi maal expire nahi ho raha 👍</div><button class="btn" style="background:#ddd;color:#000" onclick="closeM('expiryM')">Band Karo</button></div></div>
 
-<div id="profitM" class="modal"><div class="box"><h2>📈 Aaj ka Profit</h2><div id="profitData"></div><button class="btn" style="background:#ddd;color:#000" onclick="closeM('profitM')">Band Karo</button></div></div>
-<div id="billsM" class="modal"><div class="box"><h2>🧾 Saare Bills</h2><div id="billsList"></div><button class="btn" style="background:#ddd;color:#000" onclick="closeM('billsM')">Band Karo</button></div></div>
+<div id="udhaarM" class="modal" onclick="if(event.target==this)closeM('udhaarM')"><div class="box"><h2>📒 Udhaari Khata</h2><input id="uName" placeholder="Customer naam"><input id="uAmt" type="number" placeholder="Kitna udhaar"><button class="btn" onclick="addUdhaar()">Udhaar Likho</button><div id="udhaarList"></div><button class="btn" style="background:#ddd;color:#000" onclick="closeM('udhaarM')">Band Karo</button></div></div>
 
-<div class="bottom"><div>🏠<br>Home</div><div>📋<br>Orders</div><div>📦<br>Inventory</div><div>👥<br>Customers</div><div>👤<br>Profile</div></div>
+<div id="profitM" class="modal" onclick="if(event.target==this)closeM('profitM')"><div class="box"><h2>📈 Aaj ka Profit</h2><div id="profitData"></div><button class="btn" style="background:#ddd;color:#000" onclick="closeM('profitM')">Band Karo</button></div></div>
+<div id="billsM" class="modal" onclick="if(event.target==this)closeM('billsM')"><div class="box"><h2>🧾 Saare Bills</h2><div id="billsList"></div><button class="btn" style="background:#ddd;color:#000" onclick="closeM('billsM')">Band Karo</button></div></div>
+
+<div id="profileM" class="modal" onclick="if(event.target==this)closeM('profileM')"><div class="box"><h2>👤 Profile - Shiv Shakti Kirana</h2><p style="padding:10px 0">Ye app pure Bharat ke kirana dukaandaron ke liye banayi gayi hai.</p><a class="yt-btn" href="https://youtube.com" target="_blank">▶️ YouTube Channel Dekhein</a><p style="margin-top:10px;font-size:12px;color:#888">Version: Live App 2.0 - Ab 5 Menu Working!</p><button class="btn" style="background:#ddd;color:#000" onclick="closeM('profileM')">Band Karo</button></div></div>
+
+<div class="bottom">
+<div onclick="navTo('home')" id="navHome" class="active">🏠<br>Home</div>
+<div onclick="navTo('orders')" id="navOrders">📋<br>Orders</div>
+<div onclick="navTo('inventory')" id="navInv">📦<br>Inventory</div>
+<div onclick="navTo('customers')" id="navCust">👥<br>Customers</div>
+<div onclick="navTo('profile')" id="navProf">👤<br>Profile</div>
+</div>
 
 <script>
 let sales=JSON.parse(localStorage.getItem('sales')||'[]');
 let stock=JSON.parse(localStorage.getItem('stock')||'[]');
 let udhaar=JSON.parse(localStorage.getItem('udhaar')||'[]');
-
 function openM(id){document.getElementById(id).classList.add('active');renderAll()}
 function closeM(id){document.getElementById(id).classList.remove('active')}
 function addSale(){
@@ -85,6 +96,14 @@ function renderAll(){
 }
 function searchProd(){
  let q=searchInput.value.toLowerCase(); let f=stock.filter(s=>s.name.toLowerCase().includes(q)); if(q){openM('stockM'); stockList.innerHTML=f.map(s=>`<div class=item><span>${s.name}</span><span>${s.qty}</span></div>`).join('')||'Nahi mila'}
+}
+function navTo(page){
+ document.querySelectorAll('.bottom div').forEach(d=>d.classList.remove('active'));
+ if(page=='home'){document.getElementById('navHome').classList.add('active'); window.scrollTo({top:0,behavior:'smooth'});}
+ if(page=='orders'){document.getElementById('navOrders').classList.add('active'); openM('salesM');}
+ if(page=='inventory'){document.getElementById('navInv').classList.add('active'); openM('stockM');}
+ if(page=='customers'){document.getElementById('navCust').classList.add('active'); openM('udhaarM');}
+ if(page=='profile'){document.getElementById('navProf').classList.add('active'); openM('profileM');}
 }
 renderAll();
 </script></body></html>
