@@ -1,76 +1,103 @@
 <!DOCTYPE html>
 <html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Shiv Shakti Kirana - Premium</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Devanagari:wght@500&display=swap" rel="stylesheet">
+<title>Shiv Shakti Kirana - Stock Pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;font-family:'Inter',sans-serif}
-body{background:#f5efe6;padding-bottom:110px;color:#3d2b1f}
-.top{background:#fff8f0;border-radius:0 0 28px 28px;padding:16px 18px 22px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 8px 24px rgba(61,43,31,.08);margin:0 8px}
-.top h1{font-size:22px;line-height:1.1;color:#3d2b1f} .top span{font-family:'Noto Sans Devanagari',sans-serif;font-weight:600}
-.top-icon{width:40px;height:40px;background:#fff0e0;border-radius:12px;display:flex;align-items:center;justify-content:center;border:1px solid #e8dcc8}
-.search{margin:14px 14px 16px;background:#fffdf8;border:1px solid #e8dcc8;border-radius:20px;padding:14px 16px;display:flex;gap:10px;box-shadow:0 6px 16px rgba(61,43,31,.06)}
-.search input{border:0;outline:0;flex:1;background:transparent;font-size:14px}
-.greeting{margin:0 14px 14px;background:linear-gradient(135deg,#fff6eb,#fbead0);border-radius:20px;padding:16px 18px;border:1px solid #f0ddc0}
-.greeting b{font-size:18px} .greeting small{color:#8a6f55}
+body{background:#f5efe6;color:#3d2b1f;padding-bottom:110px}
+.top{background:#fff8f0;border-radius:0 0 28px 28px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 8px 24px rgba(61,43,31,.08);margin:0 8px}
+.search{margin:14px;background:#fffdf8;border:1px solid #e8dcc8;border-radius:20px;padding:14px 16px;display:flex;gap:10px}
+.search input{border:0;outline:0;flex:1;background:transparent}
+.greet{margin:0 14px 14px;background:linear-gradient(135deg,#fff6eb,#fbead0);border-radius:20px;padding:16px;border:1px solid #f0ddc0}
 .stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:0 14px}
-.scard{background:#fffdf8;border:1px solid #f0e5d3;border-radius:18px;padding:14px 12px;text-align:center;box-shadow:0 4px 12px rgba(61,43,31,.05)}
-.scard b{font-size:18px;color:#3d2b1f;display:block;margin:4px 0} .scard small{color:#0a7a42;font-size:11px}
-.section-title{text-align:center;margin:22px 0 14px;font-weight:700;letter-spacing:1px;color:#5a4632;font-size:13px}
+.scard{background:#fffdf8;border:1px solid #f0e5d3;border-radius:18px;padding:14px;text-align:center}
+.scard b{display:block;font-size:18px}
+.secT{text-align:center;margin:20px 0 12px;font-weight:700;font-size:12px;letter-spacing:1px;color:#5a4632}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 14px}
-.gcard{border-radius:22px;padding:22px 10px;text-align:center;box-shadow:0 8px 18px rgba(61,43,31,.08);cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:6px;border:1px solid rgba(255,255,255,.6);transition:.2s}
+.gcard{border-radius:22px;padding:20px;text-align:center;cursor:pointer;border:1px solid rgba(255,255,255,.6);box-shadow:0 8px 18px rgba(61,43,31,.08);transition:.15s}
 .gcard:active{transform:scale(.96)}
-.gcard i{font-size:22px} .gcard b{font-size:14px;color:#3d2b1f}
 .c1{background:linear-gradient(135deg,#fef9c3,#fde68a)} .c2{background:linear-gradient(135deg,#ffedd5,#fdba74)} .c3{background:linear-gradient(135deg,#ccfbf1,#99f6e0)} .c4{background:linear-gradient(135deg,#fce7f3,#f9a8d4)} .c5{background:linear-gradient(135deg,#dcfce7,#86efac)} .c6{background:linear-gradient(135deg,#e0e7ff,#a5b4fc)}
 .modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(61,43,31,.35);backdrop-filter:blur(6px);display:none;align-items:end;z-index:99}
 .modal.active{display:flex}
-.box{background:#fffdf8;width:100%;max-height:85vh;border-radius:28px 28px 0 0;padding:20px;overflow:auto;border-top:1px solid #f0e5d3}
-.box h2{margin-bottom:12px;color:#3d2b1f} .box input{width:100%;padding:13px;border:1px solid #e8dcc8;border-radius:12px;margin:7px 0;background:#fff}
-.btn{width:100%;padding:14px;background:#3d2b1f;color:#fffaf0;border:0;border-radius:14px;margin-top:12px;font-weight:700}
+.box{background:#fffdf8;width:100%;max-height:90vh;border-radius:28px 28px 0 0;padding:18px;overflow:auto}
+.box input, .box select{width:100%;padding:13px;border:1px solid #e8dcc8;border-radius:12px;margin:6px 0;background:#fff}
+.btn{width:100%;padding:14px;background:#3d2b1f;color:#fffaf0;border:0;border-radius:14px;margin-top:10px;font-weight:700}
 .btn-sec{background:#f5efe6;color:#3d2b1f;border:1px solid #e8dcc8}
-.item{padding:12px 4px;border-bottom:1px solid #f0e5d3;display:flex;justify-content:space-between;font-size:14px}
+.item{padding:12px 6px;border-bottom:1px solid #f0e5d3;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.filter{display:flex;gap:8px;margin:10px 0}
+.filter div{padding:8px 14px;border-radius:20px;background:#fff0e0;border:1px solid #e8dcc8;font-size:13px;cursor:pointer}
+.filter div.active{background:#3d2b1f;color:#fffaf0}
+.low{color:#b91c1c;background:#fff1f2;border:1px solid #fecdd3;border-radius:10px;margin-bottom:6px}
 .bottom{position:fixed;left:12px;right:12px;bottom:12px;background:#fffdf8;border:1px solid #f0e5d3;border-radius:24px;display:flex;justify-content:space-around;padding:8px 0;box-shadow:0 12px 30px rgba(61,43,31,.15);z-index:50}
-.bottom div{cursor:pointer;text-align:center;font-size:11px;padding:6px 12px;border-radius:14px;color:#8a6f55;transition:.2s}
-.bottom div.active{color:#3d2b1f;font-weight:700;background:#fbead0}
+.bottom div{text-align:center;font-size:11px;padding:6px 12px;border-radius:14px;color:#8a6f55;cursor:pointer}
+.bottom div.active{background:#fbead0;color:#3d2b1f;font-weight:700}
+#stockDetailM .box{max-height:92vh}
+.detail-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0e5d3;font-size:13px}
+.detail-row b{color:#3d2b1f}
 </style></head><body>
 
-<div class="top">
-<div><h1><span>शिव शक्ति</span><br>Kirana</h1></div>
-<div style="display:flex;gap:8px"><div class="top-icon">🔍</div><div class="top-icon">🔔</div></div>
-</div>
-
-<div class="search">🔎 <input id="searchInput" onkeyup="searchProd()" placeholder="Search product, atta, oil..."></div>
-
-<div class="greeting">
-<b>Namaste, Raj 👋</b><br>
-<small>Here's your store overview for today • <span id="todayDate"></span></small>
-</div>
+<div class="top"><h1>शिव शक्ति<br>Kirana</h1><div>🔔</div></div>
+<div class="search">🔎 <input id="searchInput" onkeyup="renderStock()" placeholder="Search product..."></div>
+<div class="greet"><b>Namaste, Raj 👋</b><br><small id="todayDate" style="color:#8a6f55"></small></div>
 
 <div class="stats">
-<div class="scard"><small style="font-size:10px;color:#8a6f55;display:block">आज की बिक्री</small><b id="tRev">₹0</b><small id="tGrowth">+0% vs yesterday</small></div>
-<div class="scard"><small style="font-size:10px;color:#8a6f55;display:block">Orders</small><b id="tOrders">0</b><small id="tPend">0 pending</small></div>
-<div class="scard"><small style="font-size:10px;color:#8a6f55;display:block">Pending Credit</small><b id="tUdhaar">₹0</b><small><span id="tCust">0</span> customers</small></div>
+<div class="scard"><small>आज की बिक्री</small><b id="tRev">₹0</b><small id="tGrowth" style="color:green">Live</small></div>
+<div class="scard"><small>Total SKU</small><b id="tSku">0</b><small id="tLow">0 low</small></div>
+<div class="scard"><small>Udhaari</small><b id="tUdhaar">₹0</b><small><span id="tCust">0</span> cust</small></div>
 </div>
 
-<div class="section-title">QUICK ACTIONS</div>
+<div class="secT">QUICK ACTIONS</div>
 <div class="grid">
-<div class="gcard c1" onclick="openM('salesM')"><i>📊</i><b>Sales</b><small style="font-size:10px">Naya Bill</small></div>
-<div class="gcard c2" onclick="openM('expiryM')"><i>⏳</i><b>Expiry</b><small style="font-size:10px">Check Karo</small></div>
-<div class="gcard c3" onclick="openM('stockM')"><i>📦</i><b>Stock</b><small style="font-size:10px">Add Karo</small></div>
-<div class="gcard c4" onclick="openM('udhaarM')"><i>📝</i><b>Udhaari</b><small style="font-size:10px">Khata Dekho</small></div>
-<div class="gcard c5" onclick="openM('profitM')"><i>📈</i><b>Profit</b><small style="font-size:10px">Aaj Ka</small></div>
-<div class="gcard c6" onclick="openM('billsM')"><i>🧾</i><b>Bills</b><small style="font-size:10px">History</small></div>
+<div class="gcard c1" onclick="openM('salesM')">📊<br><b>Sales</b></div>
+<div class="gcard c2" onclick="openM('expiryM')">⏳<br><b>Expiry</b></div>
+<div class="gcard c3" onclick="openM('stockM')">📦<br><b>Stock</b></div>
+<div class="gcard c4" onclick="openM('udhaarM')">📝<br><b>Udhaari</b></div>
+<div class="gcard c5" onclick="openM('profitM')">📈<br><b>Profit</b></div>
+<div class="gcard c6" onclick="openM('billsM')">🧾<br><b>Bills</b></div>
 </div>
 
-<div class="section-title" style="margin-top:20px">LOW STOCK ALERT</div>
-<div id="lowStockBox" style="margin:0 14px;background:#fffdf8;border:1px solid #f0e5d3;border-radius:18px;padding:8px"></div>
+<!-- STOCK MAIN -->
+<div id="stockM" class="modal" onclick="if(event.target==this)closeM('stockM')">
+<div class="box">
+<h2>📦 Stock Inventory</h2>
+<div class="filter">
+<div id="fAll" class="active" onclick="setFilter('all')">All Products</div>
+<div id="fLow" onclick="setFilter('low')">Low Stock <span id="lowCount" style="background:#b91c1c;color:#fff;border-radius:8px;padding:1px 6px;font-size:11px">0</span></div>
+<div id="fIn" onclick="setFilter('in')">In Stock</div>
+</div>
+<div style="background:#fdf6e8;border-radius:12px;padding:10px;display:flex;justify-content:space-between;font-size:12px;margin-bottom:10px">
+<span>Total SKUs <b id="mSku">0</b></span><span style="color:#b91c1c">Low: <b id="mLow">0</b></span><span>Profit: <b id="mProfit">₹0</b></span>
+</div>
 
-<div id="salesM" class="modal" onclick="if(event.target==this)closeM('salesM')"><div class="box"><h2>💰 Naya Sale</h2><input id="sName" placeholder="Product naam"><input id="sAmt" type="number" placeholder="Rupaye"><input id="sCust" placeholder="Customer naam"><button class="btn" onclick="addSale()">Sale Add Karo</button><div id="salesList" style="margin-top:12px"></div><button class="btn btn-sec" onclick="closeM('salesM')">Band Karo</button></div></div>
-<div id="stockM" class="modal" onclick="if(event.target==this)closeM('stockM')"><div class="box"><h2>📦 Stock Add Karo</h2><input id="stName" placeholder="Product naam"><input id="stQty" type="number" placeholder="Qty"><input id="stExp" type="date"><button class="btn" onclick="addStock()">Stock Save Karo</button><div id="stockList" style="margin-top:12px"></div><button class="btn btn-sec" onclick="closeM('stockM')">Band Karo</button></div></div>
-<div id="expiryM" class="modal" onclick="if(event.target==this)closeM('expiryM')"><div class="box"><h2>⏳ Expire Hone Wala</h2><div id="expiryList"></div><button class="btn btn-sec" onclick="closeM('expiryM')">Band Karo</button></div></div>
-<div id="udhaarM" class="modal" onclick="if(event.target==this)closeM('udhaarM')"><div class="box"><h2>📒 Udhaari Khata</h2><input id="uName" placeholder="Customer naam"><input id="uAmt" type="number" placeholder="Kitna udhaar"><button class="btn" onclick="addUdhaar()">Udhaar Likho</button><div id="udhaarList" style="margin-top:12px"></div><button class="btn btn-sec" onclick="closeM('udhaarM')">Band Karo</button></div></div>
-<div id="profitM" class="modal" onclick="if(event.target==this)closeM('profitM')"><div class="box"><h2>📈 Aaj ka Profit</h2><div id="profitData"></div><button class="btn btn-sec" onclick="closeM('profitM')">Band Karo</button></div></div>
-<div id="billsM" class="modal" onclick="if(event.target==this)closeM('billsM')"><div class="box"><h2>🧾 Saare Bills</h2><div id="billsList"></div><button class="btn btn-sec" onclick="closeM('billsM')">Band Karo</button></div></div>
-<div id="profileM" class="modal" onclick="if(event.target==this)closeM('profileM')"><div class="box"><h2>👤 Shiv Shakti Kirana</h2><p style="padding:10px 0;font-size:14px">Premium billing app - aapki dukan ke liye banaya gaya.</p><p style="font-size:12px;color:#8a6f55">Design 3 - Minimal Beige Edition v2.1</p><button class="btn btn-sec" onclick="closeM('profileM')">Band Karo</button></div></div>
+<h3 style="font-size:14px;margin:8px 0">+ Add Product</h3>
+<input id="stName" placeholder="Product naam - Fortune Oil">
+<select id="stCat"><option>General</option><option>Atta/Chawal</option><option>Tel/Ghee</option><option>Masala</option><option>Biscuit</option><option>Sabun</option></select>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><input id="stQty" type="number" placeholder="Qty"><input id="stMin" type="number" placeholder="Min Qty (5)"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><input id="stBuy" type="number" placeholder="Kharid ₹"><input id="stSell" type="number" placeholder="Bechne ka ₹"></div>
+<input id="stSup" placeholder="Supplier naam - Sharma Dist."><input id="stExp" type="date">
+<button class="btn" onclick="addStock()">Stock Save Karo</button>
+
+<div class="secT" style="text-align:left">PRODUCT • QTY • BUY • SELL • PROFIT</div>
+<div id="stockList"></div>
+<button class="btn btn-sec" onclick="closeM('stockM')">Band Karo</button>
+</div>
+</div>
+
+<!-- STOCK DETAIL POPUP - ANDAR WALA VIEW -->
+<div id="stockDetailM" class="modal" onclick="if(event.target==this)closeM('stockDetailM')">
+<div class="box">
+<div style="display:flex;justify-content:space-between;align-items:center"><h2>Stock Details</h2><span onclick="closeM('stockDetailM')" style="font-size:22px;cursor:pointer">✕</span></div>
+<div id="detailContent"></div>
+</div>
+</div>
+
+<!-- BAKI MODALS -->
+<div id="salesM" class="modal" onclick="if(event.target==this)closeM('salesM')"><div class="box"><h2>💰 Naya Sale</h2><input id="sName" placeholder="Product naam"><input id="sAmt" type="number" placeholder="Rupaye"><input id="sCust" placeholder="Customer"><button class="btn" onclick="addSale()">Add Sale</button><div id="salesList" style="margin-top:10px"></div><button class="btn btn-sec" onclick="closeM('salesM')">Band</button></div></div>
+<div id="expiryM" class="modal" onclick="if(event.target==this)closeM('expiryM')"><div class="box"><h2>⏳ Expiry</h2><div id="expiryList"></div><button class="btn btn-sec" onclick="closeM('expiryM')">Band</button></div></div>
+<div id="udhaarM" class="modal" onclick="if(event.target==this)closeM('udhaarM')"><div class="box"><h2>📒 Udhaari</h2><input id="uName" placeholder="Customer"><input id="uAmt" type="number" placeholder="Rupaye"><button class="btn" onclick="addUdhaar()">Likh Do</button><div id="udhaarList" style="margin-top:10px"></div><button class="btn btn-sec" onclick="closeM('udhaarM')">Band</button></div></div>
+<div id="profitM" class="modal" onclick="if(event.target==this)closeM('profitM')"><div class="box"><h2>📈 Profit</h2><div id="profitData"></div><button class="btn btn-sec" onclick="closeM('profitM')">Band</button></div></div>
+<div id="billsM" class="modal" onclick="if(event.target==this)closeM('billsM')"><div class="box"><h2>🧾 Bills</h2><div id="billsList"></div><button class="btn btn-sec" onclick="closeM('billsM')">Band</button></div></div>
+<div id="profileM" class="modal" onclick="if(event.target==this)closeM('profileM')"><div class="box"><h2>👤 Profile</h2><p>Shiv Shakti Kirana - Stock Pro v3</p><button class="btn btn-sec" onclick="closeM('profileM')">Band</button></div></div>
 
 <div class="bottom">
 <div onclick="navTo('home')" id="navHome" class="active">🏠<br>Home</div>
@@ -84,29 +111,95 @@ body{background:#f5efe6;padding-bottom:110px;color:#3d2b1f}
 let sales=JSON.parse(localStorage.getItem('sales')||'[]');
 let stock=JSON.parse(localStorage.getItem('stock')||'[]');
 let udhaar=JSON.parse(localStorage.getItem('udhaar')||'[]');
+let currentFilter='all';
+let selectedId=null;
 document.getElementById('todayDate').innerText=new Date().toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
+
 function openM(id){document.getElementById(id).classList.add('active');renderAll()}
 function closeM(id){document.getElementById(id).classList.remove('active')}
-function addSale(){ if(!sName.value||!sAmt.value)return alert('Naam aur rupaye likho'); sales.unshift({name:sName.value,amt:+sAmt.value,cust:sCust.value||'Guest',date:new Date().toLocaleString()}); localStorage.setItem('sales',JSON.stringify(sales)); sName.value='';sAmt.value='';sCust.value=''; renderAll(); alert('Sale Add Ho Gaya! ✅')}
-function addStock(){ if(!stName.value||!stQty.value)return alert('Product likho'); stock.unshift({name:stName.value,qty:stQty.value,exp:stExp.value}); localStorage.setItem('stock',JSON.stringify(stock)); renderAll(); alert('Stock Save! ✅')}
-function addUdhaar(){ if(!uName.value||!uAmt.value)return alert('Naam likho'); udhaar.unshift({name:uName.value,amt:uAmt.value,date:new Date().toLocaleDateString()}); localStorage.setItem('udhaar',JSON.stringify(udhaar)); renderAll(); alert('Udhaar likh diya! ✅')}
+
+function addStock(){
+ if(!stName.value||!stQty.value) return alert('Naam aur Qty bharo');
+ let obj={id:Date.now(),name:stName.value,cat:stCat.value,qty:+stQty.value,min:+(stMin.value||5),buy:+(stBuy.value||0),sell:+(stSell.value||0),sup:stSup.value||'Local',exp:stExp.value||'',date:new Date().toLocaleDateString()};
+ stock.unshift(obj); localStorage.setItem('stock',JSON.stringify(stock));
+ stName.value='';stQty.value='';stMin.value='';stBuy.value='';stSell.value='';stSup.value='';stExp.value='';
+ renderStock(); renderStats();
+}
+
+function setFilter(f){currentFilter=f; document.querySelectorAll('.filter div').forEach(d=>d.classList.remove('active')); document.getElementById(f=='all'?'fAll':f=='low'?'fLow':'fIn').classList.add('active'); renderStock();}
+
+function renderStock(){
+ let q=(searchInput.value||'').toLowerCase();
+ let list=stock.filter(s=>s.name.toLowerCase().includes(q));
+ if(currentFilter=='low') list=list.filter(s=>s.qty<=s.min);
+ if(currentFilter=='in') list=list.filter(s=>s.qty>s.min);
+ stockList.innerHTML=list.map(s=>{
+   let profit=s.sell - s.buy; let low=s.qty<=s.min;
+   return `<div class="item ${low?'low':''}" onclick="openDetail(${s.id})">
+   <div><b>${s.name}</b> <small style="color:#8a6f55">${s.cat}</small><br><small>Qty: ${low?'<b style=color:red>'+s.qty+' Low</b>':s.qty} | Min: ${s.min}</small></div>
+   <div style="text-align:right;font-size:13px"><span>₹${s.buy} → ₹${s.sell}</span><br><b style="color:${profit>=0?'green':'red'}">₹${profit} ${profit? '+'+Math.round(profit/s.buy*100||0)+'%':''}</b></div>
+   </div>`;
+ }).join('')||'<div style="padding:12px;color:#8a6f55">Koi product nahi mila</div>';
+}
+
+function openDetail(id){
+ selectedId=id; let s=stock.find(x=>x.id==id); if(!s) return;
+ let profit=s.sell - s.buy; let margin=s.buy?Math.round(profit/s.buy*100):0; let low=s.qty<=s.min;
+ let totalBuy=s.qty*s.buy; let totalSell=s.qty*s.sell; let expProfit=totalSell-totalBuy;
+ document.getElementById('detailContent').innerHTML=`
+  <div style="display:flex;gap:10px;align-items:center;margin:10px 0"><div style="width:48px;height:48px;background:#fbead0;border-radius:12px;display:flex;align-items:center;justify-content:center">📦</div>
+  <div><b>${s.name}</b><br><small style="color:#8a6f55">${s.cat} • ${s.sup}</small></div></div>
+  ${low?`<div style="background:#fee2e2;color:#b91c1c;padding:8px;border-radius:10px;font-size:12px;margin-bottom:10px">⚠️ Only ${s.qty} packs left. Restock recommended (Min Qty: ${s.min})</div>`:''}
+  <div class="detail-row"><span>Current Quantity</span><b style="color:${low?'#b91c1c':'green'}">${s.qty} packs</b></div>
+  <div class="detail-row"><span>Minimum Quantity</span><b>${s.min} packs</b></div>
+  <div class="detail-row"><span>Buying Price</span><b>₹${s.buy} / pack</b></div>
+  <div class="detail-row"><span>Selling Price</span><b>₹${s.sell} / pack</b></div>
+  <div class="detail-row"><span>Profit per Unit</span><b style="color:green">₹${profit}</b></div>
+  <div class="detail-row"><span>Profit Margin</span><b style="color:green">${margin}%</b></div>
+  <div style="margin:12px 0"><b style="font-size:13px">Supplier Details</b>
+  <div style="font-size:12px;color:#5a4632;margin-top:4px">Supplier: ${s.sup}<br>Last Restocked: ${s.date}<br>Expiry: ${s.exp||'-'}</div></div>
+  <div style="margin:10px 0"><b style="font-size:13px">Stock Value</b>
+  <div class="detail-row"><span>Total Buy Value:</span><b>₹${totalBuy}</b></div>
+  <div class="detail-row"><span>Total Sell Value:</span><b>₹${totalSell}</b></div>
+  <div class="detail-row"><span>Expected Profit:</span><b style="color:green">₹${expProfit}</b></div></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px">
+  <button class="btn btn-sec" onclick="editStock(${s.id})">Edit Details</button>
+  <button class="btn" onclick="restockNow(${s.id})">Restock Now</button>
+  </div>
+  <button class="btn btn-sec" style="margin-top:10px;color:red;border-color:#fecdd3" onclick="deleteStock(${s.id})">Delete Product</button>
+ `;
+ openM('stockDetailM');
+}
+
+function editStock(id){
+ let s=stock.find(x=>x.id==id); if(!s) return;
+ let newQty=prompt('Naya Qty daalo:',s.qty); if(newQty===null) return;
+ let newSell=prompt('Naya Selling Price:',s.sell); if(newSell===null) return;
+ s.qty=+newQty; s.sell=+newSell; localStorage.setItem('stock',JSON.stringify(stock)); renderStock(); openDetail(id); renderStats();
+}
+function restockNow(id){
+ let s=stock.find(x=>x.id==id); if(!s) return;
+ let add=prompt('Kitna add karna hai?',10); if(!add) return;
+ s.qty+=+add; localStorage.setItem('stock',JSON.stringify(stock)); renderStock(); openDetail(id); renderStats();
+}
+function deleteStock(id){ if(!confirm('Delete karna hai?')) return; stock=stock.filter(s=>s.id!=id); localStorage.setItem('stock',JSON.stringify(stock)); closeM('stockDetailM'); renderAll();}
+
+function renderStats(){
+ let totalSales=sales.reduce((a,b)=>a+b.amt,0); let low=stock.filter(s=>s.qty<=s.min).length; let profit=stock.reduce((a,s)=>a+(s.sell-s.buy)*s.qty,0);
+ tRev.innerText='₹'+totalSales; tSku.innerText=stock.length; tLow.innerText=low+' low'; mSku.innerText=stock.length; mLow.innerText=low; mProfit.innerText='₹'+profit; lowCount.innerText=low; tUdhaar.innerText='₹'+udhaar.reduce((a,b)=>a+ +b.amt,0); tCust.innerText=[...new Set(udhaar.map(u=>u.name))].length;
+}
+
 function renderAll(){
- let total=sales.reduce((a,b)=>a+b.amt,0); tRev.innerText='₹'+total; tOrders.innerText=sales.length; let unique=[...new Set(sales.map(s=>s.cust))].length; tCust.innerText=unique; let udhTotal=udhaar.reduce((a,b)=>a+ +b.amt,0); tUdhaar.innerText='₹'+udhTotal;
- salesList.innerHTML=sales.map(s=>`<div class=item><span>${s.name} - ${s.cust}</span><b>₹${s.amt}</b></div>`).join('')||'Abhi koi sale nahi';
- billsList.innerHTML=salesList.innerHTML; stockList.innerHTML=stock.map(s=>`<div class=item><span>${s.name} x ${s.qty}</span><span>Exp: ${s.exp||'-'}</span></div>`).join('')||'Stock khali hai';
- udhaarList.innerHTML=udhaar.map(u=>`<div class=item><span>${u.name} (${u.date})</span><b>₹${u.amt}</b></div>`).join('')||'Koi udhaar nahi';
- let expiring=stock.filter(s=>{if(!s.exp)return false; let d=new Date(s.exp); let diff=(d-new Date())/(1000*3600*24); return diff<30 && diff>-5}); expiryList.innerHTML=expiring.length?expiring.map(s=>`<div class=item style="color:#b91c1c"><span>${s.name}</span><span>Exp: ${s.exp}</span></div>`).join(''):'Koi maal expire nahi ho raha 👍';
- profitData.innerHTML=`<div class=item><span>Total Bikri</span><b>₹${total}</b></div><div class=item><span>Total Udhaari</span><b>₹${udhTotal}</b></div><div class=item><span>Profit (20% maan ke)</span><b style="color:green">₹${Math.round(total*0.2)}</b></div>`;
- let low=stock.slice(0,3); lowStockBox.innerHTML=low.length?low.map(s=>`<div class=item><span>📦 ${s.name} - ${s.qty} left</span><span style="background:#fbead0;padding:4px 10px;border-radius:8px;font-size:11px">Restock</span></div>`).join(''):'<div style="padding:10px;font-size:13px;color:#8a6f55">Stock full hai, koi low stock nahi 👍</div>';
+ renderStats(); renderStock();
+ salesList.innerHTML=sales.map(s=>`<div class=item><span>${s.name}</span><b>₹${s.amt}</b></div>`).join('')||'No sale';
+ billsList.innerHTML=salesList.innerHTML;
+ udhaarList.innerHTML=udhaar.map(u=>`<div class=item><span>${u.name}</span><b>₹${u.amt}</b></div>`).join('')||'No udhaar';
+ expiryList.innerHTML=stock.filter(s=>s.exp).filter(s=>{let diff=(new Date(s.exp)-new Date())/(1000*3600*24);return diff<30}).map(s=>`<div class=item style="color:red"><span>${s.name}</span><span>${s.exp}</span></div>`).join('')||'Koi expire nahi';
+ profitData.innerHTML=`<div class=item><span>Total Sale</span><b>₹${sales.reduce((a,b)=>a+b.amt,0)}</b></div><div class=item><span>Stock Value Profit</span><b style="color:green">₹${stock.reduce((a,s)=>a+(s.sell-s.buy)*s.qty,0)}</b></div>`;
 }
-function searchProd(){ let q=searchInput.value.toLowerCase(); let f=stock.filter(s=>s.name.toLowerCase().includes(q)); if(q){openM('stockM'); stockList.innerHTML=f.map(s=>`<div class=item><span>${s.name}</span><span>${s.qty}</span></div>`).join('')||'Nahi mila'}}
-function navTo(page){
- document.querySelectorAll('.bottom div').forEach(d=>d.classList.remove('active'));
- if(page=='home'){document.getElementById('navHome').classList.add('active'); window.scrollTo({top:0,behavior:'smooth'});}
- if(page=='orders'){document.getElementById('navOrders').classList.add('active'); openM('salesM');}
- if(page=='inventory'){document.getElementById('navInv').classList.add('active'); openM('stockM');}
- if(page=='customers'){document.getElementById('navCust').classList.add('active'); openM('udhaarM');}
- if(page=='profile'){document.getElementById('navProf').classList.add('active'); openM('profileM');}
-}
+
+function addSale(){ if(!sName.value||!sAmt.value)return alert('Bharo'); sales.unshift({name:sName.value,amt:+sAmt.value,cust:sCust.value}); localStorage.setItem('sales',JSON.stringify(sales)); renderAll(); alert('Sale done');}
+function addUdhaar(){ if(!uName.value||!uAmt.value)return alert('Bharo'); udhaar.unshift({name:uName.value,amt:uAmt.value}); localStorage.setItem('udhaar',JSON.stringify(udhaar)); renderAll(); alert('Udhaar likha');}
+function navTo(p){ document.querySelectorAll('.bottom div').forEach(d=>d.classList.remove('active')); if(p=='home'){navHome.classList.add('active'); scrollTo(0,0);} if(p=='inventory'){navInv.classList.add('active'); openM('stockM');} if(p=='orders'){navOrders.classList.add('active'); openM('salesM');} if(p=='customers'){navCust.classList.add('active'); openM('udhaarM');} if(p=='profile'){navProf.classList.add('active'); openM('profileM');}}
 renderAll();
 </script></body></html>
